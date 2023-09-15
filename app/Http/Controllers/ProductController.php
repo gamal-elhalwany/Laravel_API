@@ -26,9 +26,10 @@ class ProductController extends Controller
     public function index(Product $product)
     {
         // return Product::all();
+        // return ProductResource::collection(Product::paginate(10)); // this one is used if there is no resource collection file.
         return new ProductResourceCollection (Product::paginate(10));
 
-        // You Can Choose One of The Above Methods, The First one Returns the Data Wrapped into an array of Objects Without a name, But the Second One is Returning the Data Wrapped an array of Objects but with a name.
+        // You Can Choose One of The Above Methods, The First one Returns the Data Wrapped into an array of Objects Without a name, But the Second One and 3rd are Returning the Data Wrapped into an array of Objects but with a name.
     }
 
     /**

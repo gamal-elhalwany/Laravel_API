@@ -12,6 +12,7 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function () {
         Route::apiResource('{product}/reviews','App\Http\Controllers\ReviewController');
     });
 
+    // these routes are belong to jwt package.
     Route::post('login', 'App\Http\Controllers\AuthController@login');
     Route::post('logout', 'App\Http\Controllers\AuthController@logout');
     Route::post('refresh', 'App\Http\Controllers\AuthController@refresh');
